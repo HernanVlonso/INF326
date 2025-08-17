@@ -1,0 +1,73 @@
+services:
+  app1:
+    build:
+      context: ./services/app1
+    image: demo/app1:latest
+    container_name: app1
+    ports:
+      - "8001:8000"
+    labels:
+      org.opencontainers.image.title: "app1"
+      org.opencontainers.image.version: "1.0.0"
+    networks:
+      - lokinet
+
+  app2:
+    build:
+      context: ./services/app2
+    image: demo/app2:latest
+    container_name: app2
+    ports:
+      - "8002:8000"
+    labels:
+      org.opencontainers.image.title: "app2"
+      org.opencontainers.image.version: "1.0.0"
+    networks:
+      - lokinet
+
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    command: -config.file=/etc/loki/local-config.yaml
+    ports:
+      - "3100:3100"
+    networks:
+      - lokinet
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: promtail
+    volumes:
+      - ./promtail/config.yml:/etc/promtail/config.yml:ro
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - lokinet
+    depends_on:
+      - loki
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    networks:
+      - lokinet
+    depends_on:
+      - loki
+
+networks:
+  lokinet:
+    driver: bridge
+
+volumes:
+  grafana_data:
