@@ -98,8 +98,6 @@ curl -s -X POST http://localhost:8002/calcular -H "Content-Type: application/jso
 
 ---
 
----
-
 ## Notas
 - `valor` debe ser entero `>= 0`.
 - Factorial tiene como límite máximo `10000`.
