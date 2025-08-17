@@ -94,7 +94,7 @@ curl -s -X POST http://localhost:8002/calcular -H "Content-Type: application/jso
      {compose_service="app2"} | json | event="calcular"
      ```
 4. También se puede abrir el dashboard:  
-   **Ir a Dashboards y luego a Logs de dos nano servicios**.
+   - **Ir a Dashboards y luego a Logs de dos nano servicios**.
 
 ---
 
