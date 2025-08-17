@@ -16,7 +16,7 @@ Uno de los nano servicios permite revisar su estado y mostrar un saludo de prueb
     - `GET /saludo`: saludo de prueba
 - **services/app2/**: Servicio FastAPI `app2`
   - Endpoint:
-    - `POST /calcular`: operaciones `doble`, `factorial`, `fibonacci`
+    - `POST /calcular`: operaciones `doble`, `factorial` y `fibonacci`
 - **promtail/config.yml**: Configuración de Promtail.
 - **grafana/provisioning/**: Datasource Loki y dashboard.
 
