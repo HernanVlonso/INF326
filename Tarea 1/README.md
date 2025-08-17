@@ -2,7 +2,7 @@
 
 Este proyecto despliega dos nano-servicios en **FastAPI** con logging estructurado en JSON.  
 Los logs se envían mediante **Promtail** a **Loki**, y se visualizan en **Grafana**.  
-Todo está orquestado con **Docker Compose**.
+Todo está desplegado mediante **Docker Compose**.
 
 Uno de los nano servicios permite revisar su estado y mostrar un saludo de prueba, el otro permite realizar operaciones matemáticas tales como el doble de un número, el factorial de un número y el enésimo número de la succesión de Fibonacci.
 
