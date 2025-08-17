@@ -28,9 +28,9 @@ Uno de los nano servicios permite revisar su estado y mostrar un saludo de prueb
 
 ---
 
-## Arranque del stack
+## Inicio
 ```powershell
-cd nano_servicios
+cd Tarea 1
 docker compose build
 docker compose up -d
 docker compose ps
