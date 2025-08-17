@@ -87,7 +87,7 @@ curl -s -X POST http://localhost:8002/calcular -H "Content-Type: application/jso
 3. Ejecutar consultas:
    - Logs de `app1`:  
      ```
-     {compose_service="app1"} | json | event=~"estado|ping|saludo|http_request"
+     {compose_service="app1"} | json | event=~"estado|saludo|http_request"
      ```
    - Logs de `app2`:  
      ```
