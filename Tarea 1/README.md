@@ -50,7 +50,7 @@ Invoke-RestMethod -Uri "http://localhost:8001/" -Method Get
 Invoke-RestMethod -Uri "http://localhost:8001/saludo" -Method Get
 ```
 
-#### Git Bash / Linux / Mac
+#### Linux
 ```bash
 curl -s http://localhost:8001/
 curl -s http://localhost:8001/saludo
@@ -72,7 +72,7 @@ Invoke-RestMethod -Uri "http://localhost:8002/calcular" -Method Post -ContentTyp
 Invoke-RestMethod -Uri "http://localhost:8002/calcular" -Method Post -ContentType "application/json" -Body '{"operacion":"fibonacci","valor":12}'
 ```
 
-#### Git Bash / Linux / Mac
+#### Linux
 ```bash
 curl -s -X POST http://localhost:8002/calcular -H "Content-Type: application/json" -d '{"operacion":"doble","valor":21}'
 curl -s -X POST http://localhost:8002/calcular -H "Content-Type: application/json" -d '{"operacion":"factorial","valor":6}'
