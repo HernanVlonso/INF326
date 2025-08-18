@@ -1,5 +1,6 @@
 # Tarea 1 INF326 Arquitectura de Software
 
+#### URL Video: https://drive.google.com/file/d/1jgl6WgiKTowrRCN3AmWdyNqhdo5utMLR/view?usp=sharing
 Este proyecto despliega dos nano-servicios en **FastAPI** con logging estructurado en JSON.  
 Los logs se envían mediante **Promtail** a **Loki**, y se visualizan en **Grafana**.  
 Todo está desplegado mediante **Docker Compose**.
