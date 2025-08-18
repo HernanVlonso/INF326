@@ -99,7 +99,7 @@ curl -s -X POST http://localhost:8002/calcular -H "Content-Type: application/jso
 
 ---
 
-## Notas
+## Pequeñas consideraciones
 - `valor` debe ser entero `>= 0`.
 - Factorial tiene como límite máximo `10000`.
 - Fibonacci tiene como límite máximo `100000`.
